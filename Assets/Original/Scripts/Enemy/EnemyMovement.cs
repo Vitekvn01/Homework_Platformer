@@ -33,12 +33,6 @@ public class EnemyMovement : MonoBehaviour
         
         FlipLogic();
     }
-    
-    public void Init(float radiusMovement)
-    {
-        _radiusMovement = radiusMovement;
-    }
-    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -59,6 +53,12 @@ public class EnemyMovement : MonoBehaviour
         
         
     }
+    public void Init(float radiusMovement)
+    {
+        _radiusMovement = radiusMovement;
+    }
+    
+
     private void FlipLogic()
     {
         if (_currentTarget.x > transform.position.x)

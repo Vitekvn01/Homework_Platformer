@@ -10,12 +10,6 @@ public class CameraFollow : MonoBehaviour
 
     private Camera _camera;
     private Transform _target;
-    
-
-    private void Start()
-    {
-        _camera = GetComponent<Camera>();
-    }
 
     private void LateUpdate()
     {

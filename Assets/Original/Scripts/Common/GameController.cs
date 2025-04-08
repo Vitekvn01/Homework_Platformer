@@ -30,14 +30,12 @@ public class GameController : MonoBehaviour
     }
     private void Win()
     {
-        Debug.Log("Победа");
         OnWinEvent?.Invoke();
         _finishTrigger.OnFinishEvent -= Win;
     }
     
     private void Lose()
     {
-        Debug.Log("Проигрыш");
         OnLoseEvent?.Invoke();
         _player.OnDeadEvent -= Lose;
     }
