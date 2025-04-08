@@ -15,6 +15,16 @@ public class CameraFollow : MonoBehaviour
     {
         FollowLogic();
     }
+    
+    private void OnDrawGizmos()
+    {
+        float height = Camera.main.orthographicSize * 2;
+        float width = height * Camera.main.aspect;
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector3(_minBounds - width/2, -100f), new Vector3(_minBounds - width/2, 100f));
+        Gizmos.DrawLine(new Vector3(_maxBounds + width/2, -100f), new Vector3(_maxBounds + width/2, 100f));
+    }
 
     public void SetTarget(Transform target)
     {
@@ -32,13 +42,5 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        float height = Camera.main.orthographicSize * 2;
-        float width = height * Camera.main.aspect;
-        
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(new Vector3(_minBounds - width/2, -100f), new Vector3(_minBounds - width/2, 100f));
-        Gizmos.DrawLine(new Vector3(_maxBounds + width/2, -100f), new Vector3(_maxBounds + width/2, 100f));
-    }
+
 }
